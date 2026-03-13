@@ -4,7 +4,7 @@
 # Maintianer: Aaron Bassett <abassett@qnx.com>
 pkgname=nettle
 pkgver=3.10.2
-pkgrel=1
+pkgrel=${pkgrel:-0}
 pkgdesc="Low-level cryptographic library"
 url="https://www.lysator.liu.se/~nisse/nettle/"
 arch="all"
@@ -52,6 +52,7 @@ utils() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 bf37ddd7dca8e78488da2a5286dcf16761d527d620572b42f2ad27bb8ee8c12999d92b0272e06f53766e7155a3f4a1ab7ad9c4b1c3caec47c031878b6b1772fb  nettle-3.10.2.tar.gz
 "
